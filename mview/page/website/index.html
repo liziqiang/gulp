@@ -1,0 +1,44 @@
+<!--inline[/common/head/head.html]-->
+<!--inline[/common/nav/nav.html]-->
+<link rel="stylesheet" href="index.less"/>
+<div id="pgContent" class="m-pg-content" block="pgContent" data-tpl-ajax="/v5/config/channelhome?nav_id=###navData.nav_id###" data-refresh="1" data-cache="1"></div>
+<script type="text/html">
+	<% if blocks && blocks.length %>
+		<% if '###navData.htemplate###' !== 'hstream' %>
+			<% each blocks as $block $bidx %>
+			<%if ~"focus|poster|still|lstill|lposter|filters|sites".split("|").indexOf($block.template) %>
+					<% if $block.template == 'focus' %>
+						<!--inline[/common/focus/focus.tpl]-->
+						<%if '###navData.template###' == 'cvip' %>
+						<!--inline[/common/vip/vip_guide.tpl]-->
+						<% /if %>
+					<% else if ~['poster', 'still', 'lstill', 'lposter',].indexOf($block.template) %>
+						<!--inline[/common/items/list_videos_tit.tpl]-->
+					<% else if $block.template == 'filters' %>
+						<!--inline[blocks/filter.tpl]-->
+						<% $first_block = true %>
+					<% else if $block.template == 'sites' %>
+						<!--inline[blocks/site.tpl]-->
+					<% /if %>
+			<% /if %>
+			<% /each %>
+			<% if '###navData.template###' && !~['csiterec','cpersonal','caggregate'].indexOf('###navData.template###') %>
+				<a id="seeAllBtn" data-hot-info class="m-see-all-btn z-2" bc="seeAll" href="<%if '###navData.template###' != 'csitesub' %>/retrieve/?channel=###navData.id###<%else%>/channels/<%/if%>">查看全部###navData.name### ></a>
+			<% /if %>
+		<% else %>
+			<div id="hot-player" style="display: none;"></div>
+			<% each blocks as $block $bidx %>
+			<% each $block.contents as $vitem $idx %>
+				<!--inline[blocks/hot.tpl]-->
+			<% /each %>
+			<% /each %>
+		<% /if %>
+	<% else %>
+		<!--inline[/common/empty/empty.tpl]-->
+	<% /if %>
+</script>
+<script src="/common/nav/nav.js"></script>
+<script src="index.js"></script>
+<!--inline[/common/player/player.html]-->
+<!--inline[/common/app/app_banner.html]-->
+<!--inline[/common/footer/footer.html]-->

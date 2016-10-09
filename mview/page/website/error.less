@@ -1,0 +1,92 @@
+@import "../../css/base";
+
+.e-error-tip, .e-error-guide {
+	background: #fff;
+	font-size: 14*@pxUnit;
+	line-height: 20*@pxUnit;
+	color: #999;
+
+	.bold {
+		font-size: 16*@pxUnit;
+		color: #000;
+	}
+
+	.channel {
+		color: #f86400;
+		font-weight: bold;
+		font-size: 15*@pxUnit;
+		white-space: nowrap;
+	}
+
+	.info {
+		margin: auto;
+		width: 255*@pxUnit;
+	}
+
+	.i-arrow-down {
+		display: inline-block;
+		color: #bbb;
+		line-height: 50*@pxUnit;
+		height: 50*@pxUnit;
+		animation: line-height 300ms ease-in infinite alternate;
+	}
+}
+
+.e-error-tip {
+	min-height: 150*@pxUnit;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.e-error-guide {
+	margin: 0 auto;
+	width: 255*@pxUnit;
+	.arrow {
+		text-align: center;
+	}
+}
+
+@keyframes line-height {
+	from {
+		line-height: 50px
+	}
+	to {
+		line-height: 45px
+	}
+}
+
+.stream-item {
+	margin-bottom: 0;
+	.hot-info {
+		line-height: 40*@pxUnit;
+		color: #999;
+	}
+	.tit {
+		margin-bottom: 10*@pxUnit;
+	}
+
+	.i-forward {
+		float: right;
+		font-size: 16*@pxUnit;
+		color: #999;
+		padding-left: 5*@pxUnit;
+	}
+
+	.share-btn {
+		float: right;
+		cursor: pointer;
+	}
+}
+
+.stream-player-wrap {
+	cursor: pointer;
+}
+
+.stream-play-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(/common/player/img/big_play.png) no-repeat center center / auto 60*@pxUnit;
+}

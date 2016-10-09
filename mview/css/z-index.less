@@ -1,0 +1,130 @@
+/**
+
+    规则参考：
+    http://redmine.funshion.com/redmine/projects/f-e/wiki/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0-CSS%E6%A0%B7%E5%BC%8F%E5%B1%82%E7%BA%A7%E6%A0%87%E5%87%86
+*/
+/*
+用户自义定层 z-index:1-10
+*/
+.z-1 {
+	z-index: 1;
+}
+.z-2 {
+	z-index: 2;
+}
+.z-3 {
+	z-index: 3;
+}
+.z-4 {
+	z-index: 4;
+}
+.z-5 {
+	z-index: 5;
+}
+.z-6 {
+	z-index: 6;
+}
+.z-7 {
+	z-index: 7;
+}
+.z-8 {
+	z-index: 8;
+}
+.z-9 {
+	z-index: 9;
+}
+.z-10 {
+	z-index: 10;
+}
+/*
+2. 系统顶级层
+
+CSS级别 z-root:100000
+拥有最高级别
+如：弹出的登录框，Alert框等，除非此层消失，页面才可以进行交互
+*/
+.z-root {
+	z-index:100000;
+}
+
+.z-loading{
+	z-index:99999;
+}
+/*
+3. 用户触碰交互形为层
+
+CSS级别 z-act:90000
+用户操作弹出的dom元素容器都定义在此层级
+如：种子面板弹层，Tooltip弹层（首页导航的工作提示），下拉菜单等
+*/
+.z-act {
+  z-index: 90000;
+}
+/*
+4. 用户点击弹层
+
+CSS级别 z-act-pop:80001
+*/
+.z-act-pop {
+  z-index: 80001;
+}
+/*
+5. 页面框架层（head）
+
+         CSS级别 z-app-head: 9000
+如：播放页头部导航
+*/
+.z-app-head {
+  z-index: 9000;
+}
+/*
+6. 页面框架层（footer）
+
+         CSS级别 z-app-footer:8000
+如：暂无需求
+*/
+.z-app-footer {
+  z-index: 8000;
+}
+/*
+7. 页面消息层
+
+CSS级别 z-msg:900
+如：页面底部风行安装提示，右下角的帮助说明等
+*/
+.z-msg {
+  z-index: 900;
+}
+/*
+8. 广告层
+
+CSS级别* z-ad*:800
+所有的页面广告都处于此层级
+*/
+.z-ad {
+  z-index: 800;
+}
+/*
+//以下为特殊层
+9. 全屏广告层
+
+CSS级别 z-ad-full:80002
+全屏广告为一特殊广告，其仅次于　触碰交互层之下
+*/
+.z-ad-full {
+  z-index: 80002;
+}
+/*
+10. 播放器开关灯动态层
+
+CSS级别 z-video-mask:95000
+z-video-mask: 遮罩层层级
+z-over-mask : 显示在遮罩层之上的层级
+*/
+.z-video-mask {
+  z-index: 95000;
+}
+.z-over-mask {
+  z-index: 95001;
+}
+

@@ -1,0 +1,50 @@
+<!--inline[/common/head/head.html]-->
+<link rel="stylesheet" href="error.less?__inline"/>
+<div id="errorTip" class="g-con f-no-bt">
+	<a class="m-app-guide j-install-btn"><i class="i-download"></i><span>下载客户端 海量超清大片看不停</span></a>
+
+	<div class="e-error-tip">
+		<div class="info">
+			<p>主人 <span class="bold">表走嘛！</span> 页面被 <span class="bold">外星人</span> 拖走了...</p>
+
+			<p class="f-mgt-1">我们一起留下来，</p>
+
+			<p>看
+				<a class="channel" href="/?nav=3">电影、</a>
+				<a class="channel" href="/?nav=4">电视剧、</a>
+				<a class="channel" href="/?nav=5">动漫、</a>
+				<a class="channel" href="/?nav=6">综艺</a>
+				吧
+			</p>
+		</div>
+	</div>
+	<div class="e-error-guide">
+		<p>主人，我们还为您准备了精彩的<a class="channel" href="/?nav=45"> 小视频 </a></p>
+
+		<p id="arrowDown" class="arrow"><i class="f-pdlr-15 i-arrow-down"></i></p>
+	</div>
+</div>
+
+
+<div class="m-pg-content" block="pgContent" data-tpl-ajax="/v5/video/topic?id=2698&sz=10" data-ajax-domain="pv"
+     data-refresh="1" data-cache="1"></div>
+<script type="text/html">
+	<% if videos && videos.length %>
+	<div id="hot-player" style="display: none;"></div>
+	<% each videos as $vitem $idx %>
+	<!--inline[blocks/hot.tpl]-->
+	<% /each %>
+	<% /if %>
+</script>
+<script src="index.js?__inline"></script>
+<script>
+	F.config.ctrlname = '404';
+	$(function () {
+		$('#arrowDown').tap(function () {
+			F.pageScroll($('#errorTip').height());
+		});
+	});
+</script>
+<!--inline[/common/player/player.html]-->
+<!--inline[/common/app/app_banner.html]-->
+<!--inline[/common/footer/footer.html]-->
