@@ -1,12 +1,13 @@
-//noinspection JSUnresolvedFunction
-var gulp = require( 'gulp' ),
-    pump = require( 'pump' ),
-    $    = require( 'gulp-load-plugins' )();
+var gulp   = require( 'gulp' ),
+    pump   = require( 'pump' ),
+    less   = require( 'gulp-less' ),
+    uglify = require( 'gulp-uglify' );
+// 可以使用gulp-load-plugins做动态加载：require( 'gulp-load-plugins' )()
 // parsing less files
 gulp.task( 'ParseLess', function( cb ) {
     pump( [
         gulp.src( 'mview/**/*.less' ),
-        $.less(),
+        less(),
         gulp.dest( 'src/static/css' )
     ], cb );
 } );
@@ -14,7 +15,7 @@ gulp.task( 'ParseLess', function( cb ) {
 gulp.task( 'PackJavascript', function( cb ) {
     pump( [
         gulp.src( 'mview/**/*.js' ),
-        $.uglify(),
+        uglify(),
         gulp.dest( 'src/static/js' )
     ], cb );
 } );
