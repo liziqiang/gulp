@@ -1,2 +1,2 @@
 var gulp = require( 'gulp' );
-gulp.task( 'default', [ 'ParseLess', 'PackJavascript', 'watch' ] );
+gulp.task( 'default', [ 'Task_Less', 'Task_Javascript', 'Task_Html', 'Task_Watch' ] );

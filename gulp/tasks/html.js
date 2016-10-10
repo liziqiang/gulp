@@ -1,11 +1,9 @@
 var gulp   = require( 'gulp' ),
     pump   = require( 'pump' ),
-    less   = require( 'gulp-less' ),
-    config = require( '../config' ).less;
-gulp.task( 'Task_Less', function( cb ) {
+    config = require( '../config' ).html;
+gulp.task( 'Task_Html', function( cb ) {
     pump( [
         gulp.src( config.src ),
-        less(),
         gulp.dest( config.dest )
     ], cb );
 } );
