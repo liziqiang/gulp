@@ -16,5 +16,10 @@ module.exports = {
         src      : source + '/**/*.js',
         dest     : static + '/js',
         settings : {}
+    },
+    image      : {
+        src      : source + '/**/*.{jpeg,gif,png}',
+        dest     : static + '/img',
+        settings : {}
     }
 };
