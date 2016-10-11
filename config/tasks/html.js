@@ -1,10 +1,14 @@
 var gulp    = require( 'gulp' ),
-    plumber = require( 'gulp-plumber' ),
-    config  = require( '../config' ).html,
+    config  = require( '../config.gulp' ).html,
     include = require( 'gulp-file-include' );
-gulp.task( 'Task_Html', function( cb ) {
-    return gulp.src( config.src )
-               .pipe( plumber() )
-               .pipe( include() )
-               .pipe( gulp.dest( config.dest ) );
+//用于在html文件中直接include文件
+gulp.task( 'fileinclude', function( done ) {
+    gulp.src( [ 'src/app/*.html' ] )
+        .pipe( include( {
+            prefix   : '@@',
+            basepath : '@file'
+        } ) )
+        .pipe( gulp.dest( 'build/app' ) )
+        .on( 'end', done );
+    // .pipe(connect.reload())
 } );

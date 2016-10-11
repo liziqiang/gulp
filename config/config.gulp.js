@@ -1,4 +1,4 @@
-var source     = './mview',
+var source     = './src',
     static     = './build/static',
     template   = './build/template';
 module.exports = {

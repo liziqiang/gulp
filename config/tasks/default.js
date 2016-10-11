@@ -1,2 +1,3 @@
+// 正式环境
 var gulp = require( 'gulp' );
-gulp.task( 'default', [ 'Task_Less', 'Task_Javascript', 'Task_Html', 'Task_Images', 'Task_Watch' ] );
+gulp.task( 'default', [ 'connect', 'fileinclude', 'md5:css', 'md5:js', 'open' ] );
