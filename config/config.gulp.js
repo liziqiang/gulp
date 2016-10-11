@@ -1,25 +1,20 @@
-var source     = './src',
-    static     = './build/static',
-    template   = './build/template';
+var SOURCE     = './src',
+    STATIC     = './build/static',
+    TEMPLATE   = './build/template';
 module.exports = {
-    html       : {
-        src      : source + '/**/*.html',
-        dest     : template,
+    html   : {
+        src      : SOURCE + '/app/*.html',
+        dest     : TEMPLATE,
         settings : {}
     },
-    less       : {
-        src      : source + '/**/*.less',
-        dest     : static + '/css',
+    css    : {
+        src      : SOURCE + '/css/*.{less,css}',
+        dest     : STATIC + '/css',
         settings : {}
     },
-    javascript : {
-        src      : source + '/**/*.js',
-        dest     : static + '/js',
-        settings : {}
-    },
-    image      : {
-        src      : source + '/**/*.{jpeg,gif,png}',
-        dest     : static + '/img',
+    images : {
+        src      : SOURCE + '/images/**/*',
+        dest     : STATIC + '/images',
         settings : {}
     }
 };

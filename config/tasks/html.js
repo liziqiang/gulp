@@ -3,12 +3,12 @@ var gulp    = require( 'gulp' ),
     include = require( 'gulp-file-include' );
 //用于在html文件中直接include文件
 gulp.task( 'fileinclude', function( done ) {
-    gulp.src( [ 'src/app/*.html' ] )
+    gulp.src( config.src )
         .pipe( include( {
             prefix   : '@@',
             basepath : '@file'
         } ) )
-        .pipe( gulp.dest( 'build/app' ) )
+        .pipe( gulp.dest( config.dest ) )
         .on( 'end', done );
     // .pipe(connect.reload())
 } );
